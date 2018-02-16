@@ -50,7 +50,13 @@ app.get('/', function(req, res){
 
 app.get('/about', function(req, res){
   res.render('about.hbs', {
-    pageTitle: 'About Page',
+    pageTitle: 'About Page'
+  });
+});
+
+app.get('/project', function(req, res){
+  res.render('project.hbs', {
+    pageTitle: 'Project Page'
   });
 });
 
