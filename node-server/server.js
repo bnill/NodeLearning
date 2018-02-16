@@ -22,10 +22,12 @@ app.use(function(req, res, next){
   next();
 });
 
+/*
 app.use(function(req, res, next){
   res.render('maintenance.hbs');
-  //no next to block the following parts
-});
+  //no next to block the following
+})
+*/
 
 //locate the dir place, static middleware
 app.use(express.static(__dirname + '/public'));
