@@ -19,5 +19,18 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', function(err, client){
     console.log('Unable to fetch from DB: ', err);
   });
 
+  db.collection('Todos').find().count().then(function(count){
+    console.log('Todos count: ');
+    console.log(JSON.stringify(count, undefined, 2));
+  }, function(err){
+    console.log('Unable to fetch from DB: ', err);
+  });
+
+  db.collection('Users').find({age: '24'}).toArray().then(function(docs){
+    console.log(JSON.stringify(docs, undefined, 2));
+  }, function(err){
+    console.log('Unable to fetch from DB: ', err);
+  })
+
   client.close();
 });
